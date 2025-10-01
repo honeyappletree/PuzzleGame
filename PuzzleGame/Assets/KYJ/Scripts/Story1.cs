@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Story1 : MonoBehaviour
 {
     [SerializeField] Button nextButton;
-    int nextDialogue = 0;
+    int spaceDialogue = 0;
+    int buttonDialogue = 0;
+    int sum = 0;
     [SerializeField] Text nameText;
     [SerializeField] Text dialogueText;
     [SerializeField] [TextArea] string[] dialogue;
@@ -17,60 +20,71 @@ public class Story1 : MonoBehaviour
     void Start()
     {
         nextButton.onClick.AddListener(NextDialogue);
-        nameText.text = name[nextDialogue];
-        dialogueText.text = dialogue[nextDialogue];
-        //StartCoroutine(Dialogue());
+        nameText.text = " ";
+        dialogueText.text = " ";
     }
 
     void Update()
     {
-        PressSpace();
+        if(Input.GetKeyDown(KeyCode.Space) == true)
+        {
+            StartCoroutine(SpaceNextDialogue());
+        }
     }
 
-    void PressSpace()
+    IEnumerator SpaceNextDialogue()
     {
-        if (Input.GetKeyDown(KeyCode.Space) == true)
+        //sum = spaceDialogue + buttonDialogue;
+        if(spaceDialogue < 11)
         {
-            nextDialogue++;
-            nameText.text = name[nextDialogue];
-            dialogueText.text = dialogue[nextDialogue];
+            dialogueText.text = " ";
+            string talk = dialogue[spaceDialogue];
+            nameText.text = name[spaceDialogue];
+            spaceDialogue++;
+            sum += spaceDialogue;
 
-            if (nextDialogue == 10)
+            for (int j = 0; j < talk.Length; j++)
             {
-                StartGame.readDialogue1 = true;
-                SceneManager.LoadScene("Stage1");
+                dialogueText.text += talk[j];
+                yield return new WaitForSeconds(0.08f);
+            }
+
+            if (spaceDialogue == 11)
+            {
+                yield return new WaitForSeconds(0.5f);
+                SceneManager.LoadScene("GuestScene");
             }
         }
     }
 
-    //IEnumerator Dialogue()
-    //{
-    //    nameText.text = null;
-    //    dialogueText.text = null;
+    IEnumerator ButtonNextDialogue()
+    {
+        if (buttonDialogue < 11)
+        {
+            dialogueText.text = " ";
+            string talk = dialogue[buttonDialogue];
+            nameText.text = name[buttonDialogue];
+            buttonDialogue++;
+            sum += buttonDialogue;
 
-    //    for(int i = 0; i < name.Length; i++)
-    //    {
-    //        nameText.text += name[i];
-    //        yield return new WaitForSeconds(1f);
-    //    }
+            for (int j = 0; j < talk.Length; j++)
+            {
+                dialogueText.text += talk[j];
+                yield return new WaitForSeconds(0.08f);
+            }
 
-    //    for(int j = 0; j < dialogue.Length; j++)
-    //    {
-    //        dialogueText.text += dialogue[j];
-    //        yield return new WaitForSeconds(1f);
-    //    }
-    //}
+            if (buttonDialogue == 11)
+            {
+                yield return new WaitForSeconds(0.5f);
+                SceneManager.LoadScene("GuestScene");
+            }
+        }
+        
+    }
 
     void NextDialogue()
     {
-        nextDialogue++;
-        nameText.text = name[nextDialogue];
-        dialogueText.text = dialogue[nextDialogue];
-
-        if (nextDialogue == 10)
-        {
-            StartGame.readDialogue1 = true;
-            SceneManager.LoadScene("Stage1");
-        }
+        StartCoroutine(ButtonNextDialogue());
     }
+
 }
