@@ -31,13 +31,79 @@ SpriteAtlas:
       enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
-    packables: []
+    packables:
+    - {fileID: 2800000, guid: 5f8cb155af8feb845ade9cda1e00ad05, type: 3}
+    - {fileID: 2800000, guid: c1c6a90e15acb9f44b85b67d445bb650, type: 3}
+    - {fileID: 2800000, guid: 2be9ace7bca8b2341a70ebc1e3fe2218, type: 3}
+    - {fileID: 2800000, guid: fc831bc40f03d0b4a9a057b61f99702e, type: 3}
+    - {fileID: 2800000, guid: 4209c82602f42b942acaff728e7b4bc9, type: 3}
+    - {fileID: 2800000, guid: 235fb88093347964a86c5dc256178db1, type: 3}
+    - {fileID: 2800000, guid: 03bed57a928ace04bb24240a0a480efe, type: 3}
+    - {fileID: 2800000, guid: 7d559fe54086ddd4db2ed949d9b60213, type: 3}
+    - {fileID: 2800000, guid: 91546d94b00030b4784c4b9d554f56f7, type: 3}
+    - {fileID: 2800000, guid: 390cdf89c71bde745a53fcf45d162af1, type: 3}
+    - {fileID: 2800000, guid: 0d13f07c9f54bd346813daaabd6f252d, type: 3}
+    - {fileID: 2800000, guid: f388371e474ccbf49ac3a458fa3d59a2, type: 3}
+    - {fileID: 2800000, guid: 3fdf711fef472e64aa9a23551b90806f, type: 3}
+    - {fileID: 2800000, guid: 397f2f3fae3c8f84696336339015c1e9, type: 3}
+    - {fileID: 2800000, guid: b9db92d9d05369142be16e847f10e975, type: 3}
+    - {fileID: 2800000, guid: f243024598a9d694cb0155e840c1e81d, type: 3}
+    - {fileID: 2800000, guid: f1efe5df0b3a86d4ba9aaab8d6f488c3, type: 3}
+    - {fileID: 2800000, guid: 98c446618432e5d498bdc8b84e346a74, type: 3}
+    - {fileID: 2800000, guid: 76f34f8e0be7e1643a068dcf9157fdf5, type: 3}
+    - {fileID: 2800000, guid: 64f3fc8475ebc0141a8f3bbb07be0464, type: 3}
+    - {fileID: 2800000, guid: f8b6bf4c79717334297cba73aff0a618, type: 3}
+    - {fileID: 2800000, guid: dac601c333df94f4c9fa5d58a305a474, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites: []
-  m_PackedSpriteNamesToIndex: []
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 235fb88093347964a86c5dc256178db1, type: 3}
+  - {fileID: 21300000, guid: 98c446618432e5d498bdc8b84e346a74, type: 3}
+  - {fileID: 21300000, guid: dac601c333df94f4c9fa5d58a305a474, type: 3}
+  - {fileID: 21300000, guid: 64f3fc8475ebc0141a8f3bbb07be0464, type: 3}
+  - {fileID: 21300000, guid: 91546d94b00030b4784c4b9d554f56f7, type: 3}
+  - {fileID: 21300000, guid: fc831bc40f03d0b4a9a057b61f99702e, type: 3}
+  - {fileID: 21300000, guid: f243024598a9d694cb0155e840c1e81d, type: 3}
+  - {fileID: 21300000, guid: 5f8cb155af8feb845ade9cda1e00ad05, type: 3}
+  - {fileID: 21300000, guid: 7d559fe54086ddd4db2ed949d9b60213, type: 3}
+  - {fileID: 21300000, guid: 4209c82602f42b942acaff728e7b4bc9, type: 3}
+  - {fileID: 21300000, guid: 2be9ace7bca8b2341a70ebc1e3fe2218, type: 3}
+  - {fileID: 21300000, guid: 390cdf89c71bde745a53fcf45d162af1, type: 3}
+  - {fileID: 21300000, guid: b9db92d9d05369142be16e847f10e975, type: 3}
+  - {fileID: 21300000, guid: 03bed57a928ace04bb24240a0a480efe, type: 3}
+  - {fileID: 21300000, guid: f8b6bf4c79717334297cba73aff0a618, type: 3}
+  - {fileID: 21300000, guid: 0d13f07c9f54bd346813daaabd6f252d, type: 3}
+  - {fileID: 21300000, guid: c1c6a90e15acb9f44b85b67d445bb650, type: 3}
+  - {fileID: 21300000, guid: f388371e474ccbf49ac3a458fa3d59a2, type: 3}
+  - {fileID: 21300000, guid: 76f34f8e0be7e1643a068dcf9157fdf5, type: 3}
+  - {fileID: 21300000, guid: 3fdf711fef472e64aa9a23551b90806f, type: 3}
+  - {fileID: 21300000, guid: 397f2f3fae3c8f84696336339015c1e9, type: 3}
+  - {fileID: 21300000, guid: f1efe5df0b3a86d4ba9aaab8d6f488c3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Letter6
+  - Letter18
+  - Letter22
+  - Letter20
+  - Letter9
+  - Letter4
+  - Letter16
+  - Letter1
+  - Letter8
+  - Letter5
+  - Letter3
+  - Letter10
+  - Letter15
+  - Letter7
+  - Letter21
+  - Letter11
+  - Letter2
+  - Letter12
+  - Letter19
+  - Letter13
+  - Letter14
+  - Letter17
   m_RenderDataMap: {}
-  m_Tag: New Sprite Atlas
+  m_Tag: LetterSprite
   m_IsVariant: 0
