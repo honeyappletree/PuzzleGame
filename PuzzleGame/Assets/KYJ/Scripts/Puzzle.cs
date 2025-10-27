@@ -22,12 +22,12 @@ public class Puzzle : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
     {
         if(selectPuzzle == true)
         {
-            if (Input.GetKeyDown(KeyCode.Space) == true && pressSpace == false)
+            if (pressSpace == false)
             {
                 pressSpace = true;
                 Debug.Log("pressSpace: " + pressSpace);
             }
-            else if (Input.GetKeyDown(KeyCode.Space) == true && pressSpace == true)
+            else if (pressSpace == true)
             {
                 pressSpace = false;
                 Debug.Log("현재 상태는: " + pressSpace);
@@ -37,9 +37,13 @@ public class Puzzle : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
 
     public void OnPointerClick(PointerEventData eventData) //오브젝트를 클릭했을 때?
     {
-        if (eventData.button == PointerEventData.InputButton.Right)
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
-            puzzle.transform.Rotate(0, 0, 90); //z축 기준으로 마우스 오른쪽 버튼을 누를 때마다 90도씩 회전
+            if (eventData.clickCount == 2)
+            {
+                puzzle.transform.Rotate(0, 0, 90); //z축 기준으로 마우스 오른쪽 버튼을 누를 때마다 90도씩 회전
+                Debug.Log("더블클릭하였습니다.");
+            }
         }
     }
 
@@ -48,30 +52,30 @@ public class Puzzle : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
         if(eventData.button == PointerEventData.InputButton.Left)
         {
             puzzle.transform.position = eventData.position;
+        }
+    }
 
-            if(pressSpace == true)
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            selectPuzzle = true;
+            Debug.Log("퍼즐을 반전시킬 수 있습니다.");
+            
+            if(puzzle.transform.localScale.y == 1)
             {
                 puzzle.transform.localScale = new Vector3(1, -1, 1);
             }
-            if(pressSpace == false)
+            else if (puzzle.transform.localScale.y == -1)
             {
                 puzzle.transform.localScale = new Vector3(1, 1, 1);
             }
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        if (eventData.button == PointerEventData.InputButton.Left)
-        {
-            selectPuzzle = true;
-            Debug.Log("퍼즐을 반전시킬 수 있습니다.");
-        }
-    }
-
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Left)
+        if (eventData.button == PointerEventData.InputButton.Right)
         {
             selectPuzzle = false;
             Debug.Log("퍼즐을 반전시킬 수 없습니다.");
